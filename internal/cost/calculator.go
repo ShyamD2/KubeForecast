@@ -32,15 +32,15 @@ type GroupWasteSummary struct {
 
 // SavingsSummary details the comparative financial and resource differences between Control and Treatment.
 type SavingsSummary struct {
-	Duration               time.Duration      `json:"duration"`
-	ControlCost            float64            `json:"controlCost"`
-	TreatmentCost          float64            `json:"treatmentCost"`
-	AbsoluteSavings        float64            `json:"absoluteSavings"`
-	SavingsPercent         float64            `json:"savingsPercent"`
-	ControlWaste           *GroupWasteSummary `json:"controlWaste"`
-	TreatmentWaste         *GroupWasteSummary `json:"treatmentWaste"`
-	WasteReductionPercent  float64            `json:"wasteReductionPercent"`
-	Notes                  string             `json:"notes"`
+	Duration              time.Duration      `json:"duration"`
+	ControlCost           float64            `json:"controlCost"`
+	TreatmentCost         float64            `json:"treatmentCost"`
+	AbsoluteSavings       float64            `json:"absoluteSavings"`
+	SavingsPercent        float64            `json:"savingsPercent"`
+	ControlWaste          *GroupWasteSummary `json:"controlWaste"`
+	TreatmentWaste        *GroupWasteSummary `json:"treatmentWaste"`
+	WasteReductionPercent float64            `json:"wasteReductionPercent"`
+	Notes                 string             `json:"notes"`
 }
 
 type costCalculator struct {

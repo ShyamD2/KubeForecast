@@ -163,13 +163,13 @@ func runOptimizationCycle(
 
 	pods := []*v1.PodInfo{
 		{
-			Namespace: "treatment",
-			Name:      "api-server-7b89d4-x1",
-			NodeName:  "ip-10-0-1-10.ec2.internal",
-			Requested: v1.ResourceQuantities{CPU: 1600, Memory: 6500},
-			Used:      v1.ResourceQuantities{CPU: 1400, Memory: 5500},
-			IsMovable: true,
-			HasPDB:    true,
+			Namespace:          "treatment",
+			Name:               "api-server-7b89d4-x1",
+			NodeName:           "ip-10-0-1-10.ec2.internal",
+			Requested:          v1.ResourceQuantities{CPU: 1600, Memory: 6500},
+			Used:               v1.ResourceQuantities{CPU: 1400, Memory: 5500},
+			IsMovable:          true,
+			HasPDB:             true,
 			DisruptionsAllowed: 1,
 		},
 		{

@@ -1,0 +1,172 @@
+{
+  "timestamp": "2026-09-06T15:28:48.3898424Z",
+  "waterlineLevel": 0.75,
+  "safeNodes": [
+    "worker-node-02",
+    "worker-node-05",
+    "worker-node-09",
+    "worker-node-01",
+    "worker-node-04"
+  ],
+  "drainCandidates": [
+    {
+      "nodeName": "worker-node-07",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "movablePods": [
+        "mixed-pod-07-1",
+        "mixed-pod-07-2",
+        "mixed-pod-07-3",
+        "mixed-pod-07-4"
+      ],
+      "unmovablePods": [],
+      "probability": 0.46,
+      "confidence": 0.85,
+      "reasons": [
+        "Drain score 46.0 exceeds candidate threshold 40.0",
+        "CPU load 50.0% and Memory load 36.6% below waterline",
+        "All 4 pods on node are movable to safe nodes with confirmed replacement capacity"
+      ]
+    },
+    {
+      "nodeName": "worker-node-08",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "movablePods": [
+        "mixed-pod-08-1",
+        "mixed-pod-08-2",
+        "mixed-pod-08-3",
+        "mixed-pod-08-4"
+      ],
+      "unmovablePods": [],
+      "probability": 0.46,
+      "confidence": 0.85,
+      "reasons": [
+        "Drain score 46.0 exceeds candidate threshold 40.0",
+        "CPU load 50.0% and Memory load 36.6% below waterline",
+        "All 4 pods on node are movable to safe nodes with confirmed replacement capacity"
+      ]
+    },
+    {
+      "nodeName": "worker-node-10",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "movablePods": [
+        "mixed-pod-10-1",
+        "mixed-pod-10-2",
+        "mixed-pod-10-3",
+        "mixed-pod-10-4"
+      ],
+      "unmovablePods": [],
+      "probability": 0.46,
+      "confidence": 0.85,
+      "reasons": [
+        "Drain score 46.0 exceeds candidate threshold 40.0",
+        "CPU load 50.0% and Memory load 36.6% below waterline",
+        "All 4 pods on node are movable to safe nodes with confirmed replacement capacity"
+      ]
+    },
+    {
+      "nodeName": "worker-node-03",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "movablePods": [
+        "mixed-pod-03-1",
+        "mixed-pod-03-2",
+        "mixed-pod-03-3",
+        "mixed-pod-03-4"
+      ],
+      "unmovablePods": [],
+      "probability": 0.46,
+      "confidence": 0.85,
+      "reasons": [
+        "Drain score 46.0 exceeds candidate threshold 40.0",
+        "CPU load 50.0% and Memory load 36.6% below waterline",
+        "All 4 pods on node are movable to safe nodes with confirmed replacement capacity"
+      ]
+    },
+    {
+      "nodeName": "worker-node-06",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "movablePods": [
+        "mixed-pod-06-1",
+        "mixed-pod-06-2",
+        "mixed-pod-06-3",
+        "mixed-pod-06-4"
+      ],
+      "unmovablePods": [],
+      "probability": 0.46,
+      "confidence": 0.85,
+      "reasons": [
+        "Drain score 46.0 exceeds candidate threshold 40.0",
+        "CPU load 50.0% and Memory load 36.6% below waterline",
+        "All 4 pods on node are movable to safe nodes with confirmed replacement capacity"
+      ]
+    }
+  ],
+  "neutralNodes": [],
+  "totalNodes": 10,
+  "projectedNodesAfterConsolidation": 5,
+  "currentHourlyCost": 0.96,
+  "projectedHourlyCost": 0.48,
+  "potentialHourlySavings": 0.48,
+  "currentClusterWaste": {
+    "cpuWastePercent": 30,
+    "memoryWastePercent": 33.33,
+    "compositeWastePercent": 31.67,
+    "totalRequestedCpu": 20000,
+    "totalUsedCpu": 14000,
+    "totalRequestedMemory": 60000,
+    "totalUsedMemory": 40000
+  },
+  "projectedClusterWaste": {
+    "cpuWastePercent": 30,
+    "memoryWastePercent": 33.33,
+    "compositeWastePercent": 31.67,
+    "totalRequestedCpu": 10000,
+    "totalUsedCpu": 7000,
+    "totalRequestedMemory": 30000,
+    "totalUsedMemory": 20000
+  }
+}

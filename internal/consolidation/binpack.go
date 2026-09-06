@@ -9,8 +9,8 @@ import (
 
 // PackResult represents the outcome of a vector bin-packing simulation.
 type PackResult struct {
-	Success     bool
-	Assignments map[string]string // pod name -> destination node name
+	Success      bool
+	Assignments  map[string]string // pod name -> destination node name
 	RemainingCPU map[string]int64
 	RemainingMem map[string]int64
 	UnpackedPods []*v1.PodInfo

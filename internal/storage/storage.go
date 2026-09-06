@@ -54,36 +54,36 @@ func SanitizeState(state *v1.ClusterState) *v1.ClusterState {
 
 	for k, n := range state.Nodes {
 		sanitized.Nodes[k] = &v1.NodeInfo{
-			Name:             n.Name,
-			InstanceType:     n.InstanceType,
-			Zone:             n.Zone,
-			HourlyCost:       n.HourlyCost,
-			Allocatable:      n.Allocatable,
-			Requested:        n.Requested,
-			Used:             n.Used,
-			CPUUtilization:   n.CPUUtilization,
+			Name:              n.Name,
+			InstanceType:      n.InstanceType,
+			Zone:              n.Zone,
+			HourlyCost:        n.HourlyCost,
+			Allocatable:       n.Allocatable,
+			Requested:         n.Requested,
+			Used:              n.Used,
+			CPUUtilization:    n.CPUUtilization,
 			MemoryUtilization: n.MemoryUtilization,
-			PodCount:         n.PodCount,
-			MovablePodCount:  n.MovablePodCount,
-			Role:             n.Role,
-			DrainScore:       n.DrainScore,
-			SafetyScore:      n.SafetyScore,
-			Ready:            n.Ready,
-			Schedulable:      n.Schedulable,
+			PodCount:          n.PodCount,
+			MovablePodCount:   n.MovablePodCount,
+			Role:              n.Role,
+			DrainScore:        n.DrainScore,
+			SafetyScore:       n.SafetyScore,
+			Ready:             n.Ready,
+			Schedulable:       n.Schedulable,
 		}
 	}
 
 	for _, p := range state.Pods {
 		sanitized.Pods = append(sanitized.Pods, &v1.PodInfo{
-			Namespace:         p.Namespace,
-			Name:              p.Name,
-			NodeName:          p.NodeName,
-			Group:             p.Group,
-			Requested:         p.Requested,
-			Phase:             p.Phase,
-			IsMovable:         p.IsMovable,
-			UnmovableReason:   p.UnmovableReason,
-			HasPDB:            p.HasPDB,
+			Namespace:          p.Namespace,
+			Name:               p.Name,
+			NodeName:           p.NodeName,
+			Group:              p.Group,
+			Requested:          p.Requested,
+			Phase:              p.Phase,
+			IsMovable:          p.IsMovable,
+			UnmovableReason:    p.UnmovableReason,
+			HasPDB:             p.HasPDB,
 			DisruptionsAllowed: p.DisruptionsAllowed,
 		})
 	}
@@ -152,9 +152,9 @@ func (s *LocalFileStore) SaveReport(ctx context.Context, report *v1.WaterlineRep
 
 // S3SnapshotStore holds the configuration for AWS S3 snapshot archival via IRSA.
 type S3SnapshotStore struct {
-	BucketName string
-	Region     string
-	Prefix     string
+	BucketName    string
+	Region        string
+	Prefix        string
 	LocalFallback *LocalFileStore
 }
 

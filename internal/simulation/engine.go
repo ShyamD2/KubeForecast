@@ -19,13 +19,13 @@ import (
 
 // SimulationResult encapsulates the deterministic output of a simulation run.
 type SimulationResult struct {
-	Timestamp           time.Time                 `json:"timestamp"`
-	Report              *v1.WaterlineReport       `json:"report"`
-	Predictions         map[string]*v1.Prediction `json:"predictions"`
-	PlannedAssignments  map[string]string         `json:"plannedAssignments"` // pod -> destination node
-	SavingsSummary      *cost.SavingsSummary      `json:"savingsSummary"`
-	SnapshotURI         string                    `json:"snapshotUri,omitempty"`
-	ReportURI           string                    `json:"reportUri,omitempty"`
+	Timestamp          time.Time                 `json:"timestamp"`
+	Report             *v1.WaterlineReport       `json:"report"`
+	Predictions        map[string]*v1.Prediction `json:"predictions"`
+	PlannedAssignments map[string]string         `json:"plannedAssignments"` // pod -> destination node
+	SavingsSummary     *cost.SavingsSummary      `json:"savingsSummary"`
+	SnapshotURI        string                    `json:"snapshotUri,omitempty"`
+	ReportURI          string                    `json:"reportUri,omitempty"`
 }
 
 // Engine coordinates deterministic simulation, waterline scoring, predictions, and metrics export.

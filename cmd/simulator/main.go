@@ -21,23 +21,23 @@ import (
 )
 
 type ScenarioBenchmarkResult struct {
-	ScenarioName          string  `json:"scenarioName"`
-	WorkloadType          string  `json:"workloadType"`
-	TotalPods             int     `json:"totalPods"`
-	ControlNodes          int     `json:"controlNodes"`
-	TreatmentNodes        int     `json:"treatmentNodes"`
-	ControlHourlyCost     float64 `json:"controlHourlyCost"`
-	TreatmentHourlyCost   float64 `json:"treatmentHourlyCost"`
-	HourlySavings         float64 `json:"hourlySavings"`
-	SavingsPercent        float64 `json:"savingsPercent"`
-	ControlCPUWastePct    float64 `json:"controlCpuWastePct"`
-	TreatmentCPUWastePct  float64 `json:"treatmentCpuWastePct"`
-	ControlMemWastePct    float64 `json:"controlMemWastePct"`
-	TreatmentMemWastePct  float64 `json:"treatmentMemWastePct"`
-	ControlStructuralPct  float64 `json:"controlStructuralPct"`
+	ScenarioName           string  `json:"scenarioName"`
+	WorkloadType           string  `json:"workloadType"`
+	TotalPods              int     `json:"totalPods"`
+	ControlNodes           int     `json:"controlNodes"`
+	TreatmentNodes         int     `json:"treatmentNodes"`
+	ControlHourlyCost      float64 `json:"controlHourlyCost"`
+	TreatmentHourlyCost    float64 `json:"treatmentHourlyCost"`
+	HourlySavings          float64 `json:"hourlySavings"`
+	SavingsPercent         float64 `json:"savingsPercent"`
+	ControlCPUWastePct     float64 `json:"controlCpuWastePct"`
+	TreatmentCPUWastePct   float64 `json:"treatmentCpuWastePct"`
+	ControlMemWastePct     float64 `json:"controlMemWastePct"`
+	TreatmentMemWastePct   float64 `json:"treatmentMemWastePct"`
+	ControlStructuralPct   float64 `json:"controlStructuralPct"`
 	TreatmentStructuralPct float64 `json:"treatmentStructuralPct"`
-	WasteReductionPercent float64 `json:"wasteReductionPercent"`
-	Duration              string  `json:"duration"`
+	WasteReductionPercent  float64 `json:"wasteReductionPercent"`
+	Duration               string  `json:"duration"`
 }
 
 func main() {

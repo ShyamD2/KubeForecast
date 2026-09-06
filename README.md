@@ -1,29 +1,31 @@
 # KubeForecast: Kubernetes Predictive Scheduling & FinOps Cost Optimization Engine
 
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS%20EKS-v1.31%20Ready-orange?logo=amazon-eks&logoColor=white" alt="AWS EKS" />
+  <img src="https://img.shields.io/badge/Hardware-3x%20c7i--flex.large-232F3E?logo=amazon-aws&logoColor=white" alt="Hardware Verified" />
+  <img src="https://img.shields.io/badge/Go-1.23%2B-00ADD8?logo=go&logoColor=white" alt="Go Version" />
+  <img src="https://img.shields.io/badge/Terraform-AWS%20IaC-7B42BC?logo=terraform&logoColor=white" alt="Terraform" />
+  <img src="https://img.shields.io/badge/Helm-v3.0%2B-0F1689?logo=helm&logoColor=white" alt="Helm 3" />
+  <img src="https://img.shields.io/badge/Scoring%20Latency-90.35%20ns%2Fop-brightgreen" alt="Plugin Latency" />
+  <img src="https://img.shields.io/badge/Node%20Reduction-50.0%25%20--%2066.7%25-success" alt="Node Reduction" />
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" />
+</p>
 
-[![AWS EKS](https://img.shields.io/badge/AWS%20EKS-v1.31%20Ready-orange?logo=amazon-eks&logoColor=white)](https://aws.amazon.com/eks/)
-[![Hardware Verified](https://img.shields.io/badge/Hardware-3x%20c7i--flex.large-232F3E?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/ec2/instance-types/)
-[![Go Version](https://img.shields.io/badge/Go-1.23%2B-00ADD8?logo=go&logoColor=white)](https://golang.org/)
-[![Terraform](https://img.shields.io/badge/Terraform-AWS%20IaC-7B42BC?logo=terraform&logoColor=white)](https://www.terraform.io/)
-[![Helm 3](https://img.shields.io/badge/Helm-v3.0%2B-0F1689?logo=helm&logoColor=white)](https://helm.sh/)
-[![Plugin Latency](https://img.shields.io/badge/Scoring%20Latency-90.35%20ns%2Fop-brightgreen)](tests/benchmarks/)
-[![Node Reduction](https://img.shields.io/badge/Node%20Reduction-50.0%25%20--%2066.7%25-success)](experiments/results/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+<p align="center">
+  <strong>An autonomous, proactive Kubernetes scheduling framework plugin and FinOps cost optimization engine that eliminates structural cloud compute waste by predicting node consolidation targets and steering workloads toward safe waterline nodes before fragmentation occurs.</strong>
+</p>
 
-**An autonomous, proactive Kubernetes scheduling framework plugin and FinOps cost optimization engine that eliminates structural cloud compute waste by predicting node consolidation targets and steering workloads toward safe waterline nodes before fragmentation occurs.**
-
-[Executive Summary](#executive-summary) •
-[Key Highlights](#major-architectural-highlights) •
-[Visual Proofs](#visual-evidence--live-aws-screenshots) •
-[Architecture](#architecture--system-design) •
-[Algorithm](#the-dynamic-waterline-algorithm) •
-[Benchmarks](#empirical-benchmark-results) •
-[Live AWS Soak Test](#live-aws-cloud-soak-test-audit) •
-[FinOps Economics](#finops-ledger--cloud-roi) •
-[Quickstart](#quickstart--reproducibility)
-
-</div>
+<p align="center">
+  <a href="#executive-summary">Executive Summary</a> •
+  <a href="#major-architectural-highlights">Key Highlights</a> •
+  <a href="#visual-evidence--live-video-demonstration">Visual Proofs</a> •
+  <a href="#architecture--system-design">Architecture</a> •
+  <a href="#the-dynamic-waterline-algorithm">Algorithm</a> •
+  <a href="#empirical-benchmark-results">Benchmarks</a> •
+  <a href="#live-aws-cloud-soak-test-audit">Live AWS Soak Test</a> •
+  <a href="#finops-ledger--cloud-roi">FinOps Economics</a> •
+  <a href="#quickstart--reproducibility">Quickstart</a>
+</p>
 
 ---
 
