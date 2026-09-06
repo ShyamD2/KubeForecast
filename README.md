@@ -80,16 +80,15 @@ The system includes a live sci-fi command cockpit (`dashboard/index.html`) featu
 
 <p align="center">
   <a href="https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4" target="_blank">
-    <img src="screenshots/kubeforecast_cockpit_preview.gif" alt="KubeForecast Live Cockpit Walkthrough" width="100%" />
+    <img src="screenshots/kubeforecast_video_poster.png" alt="KubeForecast Live Cockpit Walkthrough" width="100%" />
   </a>
   <br />
-  <em>▲ <strong>Live Animated Cockpit Demonstration</strong> — Click preview animation to stream full HD video walkthrough with audio ▲</em>
+  <em>▲ <strong>Original Full HD 1080p Walkthrough Recording (82.4 MB)</strong> — Click preview banner above to stream directly with audio in native resolution ▲</em>
 </p>
 
-| Demonstration Asset | File Path | Format / Size | Showcase Highlights |
+| Demonstration Asset | Direct Streaming Link | Format / Size | Showcase Highlights |
 | :--- | :--- | :--- | :--- |
-| **Live Interactive Preview** | [`kubeforecast_cockpit_preview.gif`](screenshots/kubeforecast_cockpit_preview.gif) | Animated GIF (2.7 MB) | Continuous moving data pipeline, heart rate oscilloscope, live metrics ticker. |
-| **Full Cockpit Walkthrough** | [Stream `kubeforecast_live_cockpit_demo.mp4`](https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 Video (5.9 MB) | Full audio synthesis, Control vs. Treatment node drain ($0/hr), FinOps ROI calculator. |
+| **🎬 Full Cockpit Walkthrough** | [▶ **Stream `kubeforecast_live_cockpit_demo.mp4` (Full 1080p)**](https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 (82.4 MB Original Quality) | Native 1080p 60fps recording, JARVIS vocal synthesis, moving pipeline, Control vs Treatment autoscaler scale-down. |
 
 All screenshots below represent real, verified captures from live AWS EKS infrastructure, browser DevTools, terminal logs, and the JARVIS dashboard in [`screenshots/`](screenshots/).
 
