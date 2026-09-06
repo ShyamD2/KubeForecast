@@ -24,7 +24,7 @@
 
 | 🏛️ Core Architecture | 📊 Live Proofs & Dashboards | 🏗️ Production IaC & FinOps |
 | :--- | :--- | :--- |
-| • [Executive Summary](#executive-summary)<br>• [Architectural Highlights](#major-architectural-highlights)<br>• [Architecture & System Design](#architecture--system-design)<br>• [Dynamic Waterline Algorithm](#the-dynamic-waterline-algorithm) | • [Live Video Demonstration](#visual-evidence--live-video-demonstration)<br>• [11 Curated Visual Proofs](#visual-evidence--live-video-demonstration)<br>• [Grafana & Prometheus Observability](#5-production-grafana-dashboards--observability-suite)<br>• [Empirical Benchmark Results](#empirical-benchmark-results) | • [Robust Infrastructure as Code (IaC)](#robust-infrastructure-as-code-iac--cloud-topology)<br>• [Multi-Hour AWS Soak Test](#live-aws-cloud-soak-test-audit)<br>• [FinOps Ledger & Cloud ROI](#finops-ledger--cloud-roi)<br>• [Quickstart & Reproducibility](#quickstart--reproducibility) |
+| • [Executive Summary](#executive-summary)<br>• [Architectural Highlights](#major-architectural-highlights)<br>• [Architecture & System Design](#architecture--system-design)<br>• [Dynamic Waterline Algorithm](#the-dynamic-waterline-algorithm) | • [Live Video Demonstration](#visual-evidence--live-video-demonstration)<br>• [📖 **18-Page Executive Presentation (PDF)**](docs/KubeForecast_Executive_Presentation.pdf)<br>• [11 Curated Visual Proofs](#visual-evidence--live-video-demonstration)<br>• [Grafana Observability Suite](#5-production-grafana-dashboards--observability-suite) | • [Robust Infrastructure as Code (IaC)](#robust-infrastructure-as-code-iac--cloud-topology)<br>• [Multi-Hour AWS Soak Test](#live-aws-cloud-soak-test-audit)<br>• [FinOps Ledger & Cloud ROI](#finops-ledger--cloud-roi)<br>• [Quickstart & Reproducibility](#quickstart--reproducibility) |
 
 ---
 
@@ -87,6 +87,8 @@ The system includes a live sci-fi command cockpit (`dashboard/index.html`) featu
 
 > [!TIP]
 > **🎬 Full Live Cockpit Walkthrough Video**: A complete high-definition live recording demonstrating the interactive JARVIS dashboard, moving data packet pipeline, real-time ECG oscilloscope, Control vs Treatment mode toggles, Autoscaler scale-down simulation, and interactive FinOps ledger is available below and in [`screenshots/kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4).
+> 
+> **📑 18-Page Executive Presentation Deck (PDF)**: The complete architectural walkthrough, 10-story hotel analogy, and AWS EKS console proofs are available in [`docs/KubeForecast_Executive_Presentation.pdf`](docs/KubeForecast_Executive_Presentation.pdf).
 
 <p align="center">
   <a href="https://shyamd2.github.io/KubeForecast/video.html" target="_blank">
@@ -99,6 +101,7 @@ The system includes a live sci-fi command cockpit (`dashboard/index.html`) featu
 | Demonstration Asset | Direct Browser Streaming Link | Format / Size | Showcase Highlights |
 | :--- | :--- | :--- | :--- |
 | **🎬 Full Cockpit Walkthrough** | [▶ **Stream 1080p Video in Browser (Zero Download)**](https://shyamd2.github.io/KubeForecast/video.html) | Web Stream Player | Native 1080p 60fps streaming player with play/pause controls, voice synthesis, and moving pipeline. |
+| **📑 Executive Presentation Deck** | [📖 **View 18-Page Presentation (PDF)**](docs/KubeForecast_Executive_Presentation.pdf) | PDF (2.6 MB) | Full 18-page executive slide deck featuring architecture flows, mathematical proofs, and AWS EKS console evidence. |
 | **Direct GitHub Release Asset** | [Download `kubeforecast_live_cockpit_demo.mp4`](https://github.com/ShyamD2/KubeForecast/releases/download/v1.0.0/kubeforecast_live_cockpit_demo.mp4) | MP4 (82.4 MB Asset) | Official GitHub Release v1.0.0 binary artifact for offline viewing. |
 
 All screenshots below represent real, verified captures from live AWS EKS infrastructure, browser DevTools, terminal logs, and the JARVIS dashboard in [`screenshots/`](screenshots/).
