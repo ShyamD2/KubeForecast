@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "evaluation_type": "Deterministic 24-Hour Continuous Trace Replay",
+  "scenarios": [
+    { "name": "Fragmented", "type": "Irregular pod bursts", "control_nodes": 12, "treatment_nodes": 4, "savings_pct": 66.7, "waste_reduction_pct": 60.1 },
+    { "name": "Balanced", "type": "Standard Web API", "control_nodes": 8, "treatment_nodes": 4, "savings_pct": 50.0, "waste_reduction_pct": 67.6 },
+    { "name": "Mixed", "type": "Batch + Web", "control_nodes": 10, "treatment_nodes": 5, "savings_pct": 50.0, "waste_reduction_pct": 54.9 },
+    { "name": "Bursty", "type": "High volatility waves", "control_nodes": 10, "treatment_nodes": 6, "savings_pct": 40.0, "waste_reduction_pct": 20.2 },
+    { "name": "Replica-Heavy", "type": "Dense microservices", "control_nodes": 8, "treatment_nodes": 5, "savings_pct": 37.5, "waste_reduction_pct": 69.6 },
+    { "name": "CPU-Heavy", "type": "Compute intensive", "control_nodes": 8, "treatment_nodes": 7, "savings_pct": 12.5, "waste_reduction_pct": 61.9 },
+    { "name": "Memory-Heavy", "type": "Cache & Redis", "control_nodes": 8, "treatment_nodes": 7, "savings_pct": 12.5, "waste_reduction_pct": 66.8 }
+  ]
+}

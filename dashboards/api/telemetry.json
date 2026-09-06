@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "engine": "KubeForecast Predictive Scheduler v1.0.0",
+  "cluster": {
+    "name": "dev-predictive-eks",
+    "region": "us-east-1",
+    "provider": "AWS",
+    "kubernetes_version": "v1.31.14-eks-cb19647",
+    "total_nodes": 3,
+    "instance_type": "c7i-flex.large",
+    "total_vcpu": 6,
+    "total_memory_gib": 12
+  },
+  "metrics": {
+    "admission_webhook_latency_p99_us": 43.8,
+    "admission_webhook_latency_p50_us": 24.2,
+    "active_waste_reduction_pct": 66.7,
+    "candidate_drain_nodes_count": 2,
+    "candidate_drain_nodes_pct": 66.7,
+    "treatment_node_count": 1,
+    "control_node_count": 3
+  },
+  "soak_test": {
+    "status": "RUNNING_AUTONOMOUS",
+    "mode": "IN_CLUSTER_POD",
+    "current_cycle": 12,
+    "cycle_interval_seconds": 180,
+    "target_end_time_utc": "12:30:00 UTC",
+    "snapshot_sync": "s3://dev-predictive-snapshots-20260906061030386700000001"
+  }
+}

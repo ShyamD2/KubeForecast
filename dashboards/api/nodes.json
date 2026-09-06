@@ -1,0 +1,47 @@
+{
+  "status": "success",
+  "nodes": [
+    {
+      "id": "ip-10-10-10-77.ec2.internal",
+      "zone": "us-east-1a",
+      "instance_type": "c7i-flex.large",
+      "status": "Ready",
+      "role": "Waterline Target Node",
+      "cpu_allocatable_millicores": 1930,
+      "memory_allocatable_kib": 3221032,
+      "cpu_reserved_pct": 82,
+      "memory_reserved_pct": 68,
+      "waterline_score": 96.4,
+      "treatment_pods": ["treat-web-69ftw", "treat-web-pt29m", "treat-web-xc8fn", "treat-worker-4nd87", "treat-worker-nddmt"],
+      "drain_candidate": false
+    },
+    {
+      "id": "ip-10-10-11-137.ec2.internal",
+      "zone": "us-east-1b",
+      "instance_type": "c7i-flex.large",
+      "status": "Ready",
+      "role": "Candidate Drain Node",
+      "cpu_allocatable_millicores": 1930,
+      "memory_allocatable_kib": 3221032,
+      "cpu_reserved_pct": 8,
+      "memory_reserved_pct": 6,
+      "waterline_score": 12.1,
+      "treatment_pods": [],
+      "drain_candidate": true
+    },
+    {
+      "id": "ip-10-10-11-14.ec2.internal",
+      "zone": "us-east-1b",
+      "instance_type": "c7i-flex.large",
+      "status": "Ready",
+      "role": "Candidate Drain Node",
+      "cpu_allocatable_millicores": 1930,
+      "memory_allocatable_kib": 3221032,
+      "cpu_reserved_pct": 6,
+      "memory_reserved_pct": 4,
+      "waterline_score": 9.5,
+      "treatment_pods": [],
+      "drain_candidate": true
+    }
+  ]
+}

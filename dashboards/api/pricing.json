@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "currency": "USD",
+  "region": "us-east-1",
+  "billing": {
+    "total_hourly_rate": 0.4330,
+    "total_daily_rate": 10.39,
+    "total_monthly_rate": 311.76,
+    "credit_initial": 120.00,
+    "services": [
+      { "name": "Amazon EKS Control Plane", "spec": "dev-predictive-eks v1.31", "hourly": 0.1000, "daily": 2.40, "monthly": 72.00, "tier": "METERED" },
+      { "name": "Amazon EC2 Worker Fleet", "spec": "3x c7i-flex.large", "hourly": 0.2544, "daily": 6.11, "monthly": 183.17, "tier": "METERED" },
+      { "name": "Amazon VPC NAT Gateway", "spec": "Single-AZ NAT us-east-1a", "hourly": 0.0450, "daily": 1.08, "monthly": 32.40, "tier": "METERED" },
+      { "name": "AWS Elastic Load Balancer", "spec": "Classic/NLB Public Ingress", "hourly": 0.0230, "daily": 0.55, "monthly": 16.56, "tier": "METERED" },
+      { "name": "Amazon EBS gp3 SSD Disks", "spec": "3x 30 GiB gp3 (90 GiB total)", "hourly": 0.0100, "daily": 0.24, "monthly": 7.20, "tier": "STORAGE" },
+      { "name": "Amazon S3 Snapshot Bucket", "spec": "dev-predictive-snapshots", "hourly": 0.0005, "daily": 0.01, "monthly": 0.36, "tier": "STORAGE" },
+      { "name": "Amazon ECR Registry", "spec": "4 Repositories (300 MB)", "hourly": 0.0001, "daily": 0.002, "monthly": 0.07, "tier": "STORAGE" },
+      { "name": "AWS IAM & OIDC Identity", "spec": "IRSA Roles & Security Tokens", "hourly": 0.0000, "daily": 0.00, "monthly": 0.00, "tier": "FREE_TIER" },
+      { "name": "Cloudflare Edge Tunnel", "spec": "Zero-Trust TLS 1.3 Ingress", "hourly": 0.0000, "daily": 0.00, "monthly": 0.00, "tier": "FREE_TIER" }
+    ]
+  },
+  "projected_savings": {
+    "waste_reduction_rate": 0.50,
+    "monthly_dollar_savings": 155.88,
+    "annual_dollar_savings": 1870.56
+  }
+}
