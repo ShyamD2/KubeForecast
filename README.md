@@ -79,16 +79,17 @@ The system includes a live sci-fi command cockpit (`dashboard/index.html`) featu
 > **🎬 Full Live Cockpit Walkthrough Video**: A complete high-definition live recording demonstrating the interactive JARVIS dashboard, moving data packet pipeline, real-time ECG oscilloscope, Control vs Treatment mode toggles, Autoscaler scale-down simulation, and interactive FinOps ledger is available below and in [`screenshots/kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4).
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4" target="_blank">
+  <a href="https://shyamd2.github.io/KubeForecast/video.html" target="_blank">
     <img src="screenshots/kubeforecast_video_poster.png" alt="KubeForecast Live Cockpit Walkthrough" width="100%" />
   </a>
   <br />
-  <em>▲ <strong>Original Full HD 1080p Walkthrough Recording (82.4 MB)</strong> — Click preview banner above to stream directly with audio in native resolution ▲</em>
+  <em>▲ <strong>Original Full HD 1080p Walkthrough Recording</strong> — Click banner above to play directly in your browser with audio (zero download) ▲</em>
 </p>
 
-| Demonstration Asset | Direct Streaming Link | Format / Size | Showcase Highlights |
+| Demonstration Asset | Direct Browser Streaming Link | Format / Size | Showcase Highlights |
 | :--- | :--- | :--- | :--- |
-| **🎬 Full Cockpit Walkthrough** | [▶ **Stream `kubeforecast_live_cockpit_demo.mp4` (Full 1080p)**](https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 (82.4 MB Original Quality) | Native 1080p 60fps recording, JARVIS vocal synthesis, moving pipeline, Control vs Treatment autoscaler scale-down. |
+| **🎬 Full Cockpit Walkthrough** | [▶ **Stream 1080p Video in Browser (Zero Download)**](https://shyamd2.github.io/KubeForecast/video.html) | Web Stream Player | Native 1080p 60fps streaming player with play/pause controls, voice synthesis, and moving pipeline. |
+| **Direct GitHub Release Asset** | [Download `kubeforecast_live_cockpit_demo.mp4`](https://github.com/ShyamD2/KubeForecast/releases/download/v1.0.0/kubeforecast_live_cockpit_demo.mp4) | MP4 (82.4 MB Asset) | Official GitHub Release v1.0.0 binary artifact for offline viewing. |
 
 All screenshots below represent real, verified captures from live AWS EKS infrastructure, browser DevTools, terminal logs, and the JARVIS dashboard in [`screenshots/`](screenshots/).
 

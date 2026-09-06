@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KubeForecast // Live Cockpit Walkthrough Video</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --cyan: #00f0ff;
+      --cyan-glow: rgba(0, 240, 255, 0.35);
+      --emerald: #00ff9d;
+      --text-dim: #7d8ea6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      overflow-x: hidden;
+    }
+    .header {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .title-group h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      background: linear-gradient(90deg, #ffffff, var(--cyan), var(--emerald));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+    .title-group p {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 4px;
+    }
+    .back-btn {
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: var(--cyan);
+      color: #000;
+      box-shadow: 0 0 20px var(--cyan-glow);
+    }
+    .player-container {
+      width: 100%;
+      max-width: 1100px;
+      background: #080f1e;
+      border: 2px solid rgba(0, 240, 255, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      display: block;
+      background: #000;
+    }
+    .meta-bar {
+      padding: 12px 18px;
+      background: rgba(3, 10, 24, 0.95);
+      border-top: 1px solid rgba(0, 240, 255, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      display: inline-block;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>KubeForecast // Live Cockpit Walkthrough</h1>
+      <p><span class="pulse-dot"></span> Full HD 1080p 60fps Native Stream &bull; AWS Cluster: dev-predictive-eks [us-east-1]</p>
+    </div>
+    <a href="https://github.com/ShyamD2/KubeForecast" class="back-btn">
+      &larr; Return to GitHub Repo
+    </a>
+  </div>
+
+  <div class="player-container">
+    <video controls autoplay muted playsinline poster="screenshots/kubeforecast_video_poster.png">
+      <source src="screenshots/kubeforecast_live_cockpit_demo.mp4" type="video/mp4">
+      Your browser does not support HTML5 video streaming.
+    </video>
+    <div class="meta-bar">
+      <div>
+        <strong style="color:var(--cyan);">RESOLUTION:</strong> 1864&times;1032 (Native 1080p) &bull; <strong style="color:var(--emerald);">AUDIO:</strong> Voice Synthesis Active
+      </div>
+      <div>
+        <strong style="color:var(--cyan);">METRICS:</strong> 50.0% Waste Reduction &bull; 2 Nodes Drained to $0/hr
+      </div>
+    </div>
+  </div>
+</body>
+</html>
