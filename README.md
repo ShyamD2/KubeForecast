@@ -76,11 +76,20 @@ The system includes a live sci-fi command cockpit (`dashboard/index.html`) featu
 ## Visual Evidence & Live Video Demonstration
 
 > [!TIP]
-> **🎬 Full Live Cockpit Walkthrough Video**: A complete high-definition live recording demonstrating the interactive JARVIS dashboard, moving data packet pipeline, real-time ECG oscilloscope, Control vs Treatment mode toggles, Autoscaler scale-down simulation, and interactive FinOps ledger is included directly in [`screenshots/kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4).
+> **🎬 Full Live Cockpit Walkthrough Video**: A complete high-definition live recording demonstrating the interactive JARVIS dashboard, moving data packet pipeline, real-time ECG oscilloscope, Control vs Treatment mode toggles, Autoscaler scale-down simulation, and interactive FinOps ledger is available below and in [`screenshots/kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4).
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4" target="_blank">
+    <img src="screenshots/kubeforecast_cockpit_preview.gif" alt="KubeForecast Live Cockpit Walkthrough" width="100%" />
+  </a>
+  <br />
+  <em>▲ <strong>Live Animated Cockpit Demonstration</strong> — Click preview animation to stream full HD video walkthrough with audio ▲</em>
+</p>
 
 | Demonstration Asset | File Path | Format / Size | Showcase Highlights |
 | :--- | :--- | :--- | :--- |
-| **Full Cockpit Walkthrough** | [`kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 (5.9 MB, GitHub Streamable) | Real-time moving pipeline packets, audio alerts, Control vs. Treatment node drain simulation ($0/hr), live FinOps ROI slider. |
+| **Live Interactive Preview** | [`kubeforecast_cockpit_preview.gif`](screenshots/kubeforecast_cockpit_preview.gif) | Animated GIF (2.7 MB) | Continuous moving data pipeline, heart rate oscilloscope, live metrics ticker. |
+| **Full Cockpit Walkthrough** | [Stream `kubeforecast_live_cockpit_demo.mp4`](https://raw.githubusercontent.com/ShyamD2/KubeForecast/main/screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 Video (5.9 MB) | Full audio synthesis, Control vs. Treatment node drain ($0/hr), FinOps ROI calculator. |
 
 All screenshots below represent real, verified captures from live AWS EKS infrastructure, browser DevTools, terminal logs, and the JARVIS dashboard in [`screenshots/`](screenshots/).
 
