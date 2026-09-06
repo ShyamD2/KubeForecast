@@ -1,0 +1,67 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Estimated Hourly Infrastructure Cost",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "currencyUSD" } },
+      "targets": [{ "expr": "sum(predictive_scheduler_estimated_cost)", "legendFormat": "Hourly Cost" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "title": "Estimated Hourly Savings",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }] }, "unit": "currencyUSD" } },
+      "targets": [{ "expr": "predictive_scheduler_estimated_savings", "legendFormat": "Hourly Savings" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "title": "Projected Monthly Savings",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }] }, "unit": "currencyUSD" } },
+      "targets": [{ "expr": "predictive_scheduler_estimated_savings * 730", "legendFormat": "Monthly Savings" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "title": "FinOps Savings Rate (%)",
+      "type": "gauge",
+      "fieldConfig": { "defaults": { "max": 100, "min": 0, "unit": "percent" } },
+      "targets": [{ "expr": "(predictive_scheduler_estimated_savings / sum(predictive_scheduler_estimated_cost)) * 100", "legendFormat": "Savings %" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 5,
+      "title": "Structural Waste Breakdown (% by dimension)",
+      "type": "timeseries",
+      "fieldConfig": { "defaults": { "unit": "percent" } },
+      "targets": [{ "expr": "predictive_scheduler_cluster_waste_ratio", "legendFormat": "{{group}} - {{dimension}}" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 6,
+      "title": "Hourly Cost Delta: Control vs Treatment",
+      "type": "timeseries",
+      "fieldConfig": { "defaults": { "unit": "currencyUSD" } },
+      "targets": [{ "expr": "predictive_scheduler_estimated_cost", "legendFormat": "{{group}} cost" }]
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "Dashboard 4 — FinOps & Infrastructure Waste",
+  "tags": ["kubernetes", "finops", "cost", "waste"],
+  "timezone": "utc",
+  "version": 1
+}

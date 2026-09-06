@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-mixed
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: mixed-app
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mixed-app
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: mixed-app
+    spec:
+      containers:
+        - name: mixed-container
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1500Mi"
+            limits:
+              cpu: "1000m"
+              memory: "2048Mi"

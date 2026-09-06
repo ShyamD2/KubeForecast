@@ -1,0 +1,1270 @@
+{
+  "timestamp": "2026-09-05T19:09:41.5496707Z",
+  "nodes": {
+    "worker-node-01": {
+      "name": "worker-node-01",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "candidate",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-02": {
+      "name": "worker-node-02",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "safe",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-03": {
+      "name": "worker-node-03",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "candidate",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-04": {
+      "name": "worker-node-04",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "candidate",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-05": {
+      "name": "worker-node-05",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "candidate",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-06": {
+      "name": "worker-node-06",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "safe",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-07": {
+      "name": "worker-node-07",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "safe",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-08": {
+      "name": "worker-node-08",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "safe",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-09": {
+      "name": "worker-node-09",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "candidate",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    },
+    "worker-node-10": {
+      "name": "worker-node-10",
+      "instanceType": "m5.large",
+      "zone": "",
+      "hourlyCost": 0.096,
+      "allocatable": {
+        "cpu": 4000,
+        "memory": 16384
+      },
+      "requested": {
+        "cpu": 2000,
+        "memory": 6000
+      },
+      "used": {
+        "cpu": 1400,
+        "memory": 4000
+      },
+      "cpuUtilization": 0.35,
+      "memoryUtilization": 0.244140625,
+      "cpuLoadRatio": 0,
+      "memoryLoadRatio": 0,
+      "podCount": 4,
+      "movablePodCount": 4,
+      "role": "safe",
+      "drainScore": 46.02,
+      "safetyScore": 53.98,
+      "ready": true,
+      "schedulable": true
+    }
+  },
+  "pods": [
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-01-1",
+      "uid": "",
+      "nodeName": "worker-node-01",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-01-2",
+      "uid": "",
+      "nodeName": "worker-node-01",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-01-3",
+      "uid": "",
+      "nodeName": "worker-node-01",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-01-4",
+      "uid": "",
+      "nodeName": "worker-node-01",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-02-1",
+      "uid": "",
+      "nodeName": "worker-node-02",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-02-2",
+      "uid": "",
+      "nodeName": "worker-node-02",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-02-3",
+      "uid": "",
+      "nodeName": "worker-node-02",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-02-4",
+      "uid": "",
+      "nodeName": "worker-node-02",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-03-1",
+      "uid": "",
+      "nodeName": "worker-node-03",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-03-2",
+      "uid": "",
+      "nodeName": "worker-node-03",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-03-3",
+      "uid": "",
+      "nodeName": "worker-node-03",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-03-4",
+      "uid": "",
+      "nodeName": "worker-node-03",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-04-1",
+      "uid": "",
+      "nodeName": "worker-node-04",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-04-2",
+      "uid": "",
+      "nodeName": "worker-node-04",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-04-3",
+      "uid": "",
+      "nodeName": "worker-node-04",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-04-4",
+      "uid": "",
+      "nodeName": "worker-node-04",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-05-1",
+      "uid": "",
+      "nodeName": "worker-node-05",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-05-2",
+      "uid": "",
+      "nodeName": "worker-node-05",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-05-3",
+      "uid": "",
+      "nodeName": "worker-node-05",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-05-4",
+      "uid": "",
+      "nodeName": "worker-node-05",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-06-1",
+      "uid": "",
+      "nodeName": "worker-node-06",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-06-2",
+      "uid": "",
+      "nodeName": "worker-node-06",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-06-3",
+      "uid": "",
+      "nodeName": "worker-node-06",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-06-4",
+      "uid": "",
+      "nodeName": "worker-node-06",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-07-1",
+      "uid": "",
+      "nodeName": "worker-node-07",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-07-2",
+      "uid": "",
+      "nodeName": "worker-node-07",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-07-3",
+      "uid": "",
+      "nodeName": "worker-node-07",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-07-4",
+      "uid": "",
+      "nodeName": "worker-node-07",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-08-1",
+      "uid": "",
+      "nodeName": "worker-node-08",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-08-2",
+      "uid": "",
+      "nodeName": "worker-node-08",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-08-3",
+      "uid": "",
+      "nodeName": "worker-node-08",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-08-4",
+      "uid": "",
+      "nodeName": "worker-node-08",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-09-1",
+      "uid": "",
+      "nodeName": "worker-node-09",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-09-2",
+      "uid": "",
+      "nodeName": "worker-node-09",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-09-3",
+      "uid": "",
+      "nodeName": "worker-node-09",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-09-4",
+      "uid": "",
+      "nodeName": "worker-node-09",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-10-1",
+      "uid": "",
+      "nodeName": "worker-node-10",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-10-2",
+      "uid": "",
+      "nodeName": "worker-node-10",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-10-3",
+      "uid": "",
+      "nodeName": "worker-node-10",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    },
+    {
+      "namespace": "experiment",
+      "name": "mixed-pod-10-4",
+      "uid": "",
+      "nodeName": "worker-node-10",
+      "group": "",
+      "requested": {
+        "cpu": 500,
+        "memory": 1500
+      },
+      "limits": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "used": {
+        "cpu": 0,
+        "memory": 0
+      },
+      "phase": "",
+      "isMovable": true,
+      "hasPdb": false,
+      "disruptionsAllowed": 0,
+      "createdAt": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "totalAllocatable": {
+    "cpu": 0,
+    "memory": 0
+  },
+  "totalRequested": {
+    "cpu": 0,
+    "memory": 0
+  },
+  "totalUsed": {
+    "cpu": 0,
+    "memory": 0
+  },
+  "totalHourlyCost": 0
+}

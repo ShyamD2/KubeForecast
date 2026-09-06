@@ -1,0 +1,47 @@
+# Compiled binaries and executables
+bin/
+build_staging/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.tar.gz
+*.zip
+
+# Local build artifacts
+layer-*.tar.gz
+crane*
+helm*
+
+# Terraform local state and modules
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# TLS certificates generated dynamically
+certs/
+
+# Kubernetes manifests generated at runtime
+rendered.yaml
+
+# OS and IDE metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Temporary scratch and experiment runtime logs
+*.tmp
+__pycache__/
+*.pyc

@@ -1,0 +1,160 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: soak-runner-sa
+  namespace: predictive-scheduler
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: soak-runner-role
+rules:
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["", "apps"]
+    resources: ["pods", "deployments", "replicasets", "namespaces"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: soak-runner-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: soak-runner-role
+subjects:
+  - kind: ServiceAccount
+    name: soak-runner-sa
+    namespace: predictive-scheduler
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: soak-runner-script
+  namespace: predictive-scheduler
+data:
+  runner.sh: |
+    #!/usr/bin/env bash
+    set -e
+
+    echo "================================================================="
+    echo "Starting In-Cluster AWS EKS Live Cloud Soak Test Runner"
+    echo "Running 100% inside AWS EKS cluster (no local laptop required)"
+    echo "Target end time: 12:30 UTC (~18:00 IST)"
+    echo "================================================================="
+
+    CYCLE=0
+
+    while true; do
+      CURRENT_HOUR=$(date -u +%H)
+      CURRENT_MIN=$(date -u +%M)
+      
+      # Stop if after 12:30 UTC
+      if [ "$CURRENT_HOUR" -gt 12 ] || ([ "$CURRENT_HOUR" -eq 12 ] && [ "$CURRENT_MIN" -ge 30 ]); then
+        echo "[$(date -u +%T)] Reached 12:30 UTC (18:00 IST). Soak test successfully concluded."
+        break
+      fi
+
+      CYCLE=$((CYCLE + 1))
+      echo ""
+      echo "[$(date -u +%T)] ===== Starting Cloud Soak Cycle #${CYCLE} ====="
+
+      SCALE_MOD=$((CYCLE % 5))
+      WEB_REPLICAS=$((2 + (SCALE_MOD % 3)))
+      WORKER_REPLICAS=$((1 + (SCALE_MOD % 2)))
+
+      CHURN_MOD=$((CYCLE % 4))
+      if [ "$CHURN_MOD" -eq 0 ]; then
+        echo "[$(date -u +%T)] Phase: Task Churn (Scaling batch workers down to 0)..."
+        kubectl scale deployment/ctrl-worker --replicas=0 -n experiment-control 2>/dev/null || true
+        kubectl scale deployment/treat-worker --replicas=0 -n experiment-treatment 2>/dev/null || true
+      else
+        echo "[$(date -u +%T)] Phase: Wave Deployment (web=${WEB_REPLICAS}, worker=${WORKER_REPLICAS})..."
+        
+        # Scale/Apply Control
+        kubectl scale deployment/ctrl-web --replicas=${WEB_REPLICAS} -n experiment-control 2>/dev/null || true
+        kubectl scale deployment/ctrl-worker --replicas=${WORKER_REPLICAS} -n experiment-control 2>/dev/null || true
+
+        # Scale/Apply Treatment
+        kubectl scale deployment/treat-web --replicas=${WEB_REPLICAS} -n experiment-treatment 2>/dev/null || true
+        kubectl scale deployment/treat-worker --replicas=${WORKER_REPLICAS} -n experiment-treatment 2>/dev/null || true
+      fi
+
+      # Allow 40 seconds for scheduler placement and pod starting
+      sleep 40
+
+      # Extract distributions
+      echo "[$(date -u +%T)] --- Cluster Telemetry Snapshot (Cycle #${CYCLE}) ---"
+      
+      CTRL_PODS=$(kubectl get pods -n experiment-control --no-headers 2>/dev/null | grep -E "Running|Pending|ContainerCreating" | wc -l || echo 0)
+      TREAT_PODS=$(kubectl get pods -n experiment-treatment --no-headers 2>/dev/null | grep -E "Running|Pending|ContainerCreating" | wc -l || echo 0)
+
+      CTRL_NODES=$(kubectl get pods -n experiment-control -o jsonpath='{range .items[*]}{.spec.nodeName}{"\n"}{end}' 2>/dev/null | sort -u | grep -v '^$' | wc -l || echo 0)
+      TREAT_NODES=$(kubectl get pods -n experiment-treatment -o jsonpath='{range .items[*]}{.spec.nodeName}{"\n"}{end}' 2>/dev/null | sort -u | grep -v '^$' | wc -l || echo 0)
+
+      CTRL_EMPTY=$((3 - CTRL_NODES))
+      TREAT_EMPTY=$((3 - TREAT_NODES))
+
+      echo "Active Pods   : Control = ${CTRL_PODS} | Treatment = ${TREAT_PODS}"
+      echo "Nodes Used    : Control = ${CTRL_NODES} of 3 | Treatment = ${TREAT_NODES} of 3"
+      echo "Empty Nodes   : Control = ${CTRL_EMPTY} | Treatment = ${TREAT_EMPTY} (Available for Drain)"
+
+      if [ "$CTRL_NODES" -gt 0 ]; then
+        DIFF=$((CTRL_NODES - TREAT_NODES))
+        if [ "$DIFF" -gt 0 ]; then
+          SAVINGS=$((DIFF * 100 / CTRL_NODES))
+          echo "Real AWS Waste Reduction: ${SAVINGS}% node reduction achieved by Predictive Scheduling"
+        else
+          echo "Real AWS Waste Reduction: 0% (Evenly packed)"
+        fi
+      fi
+
+      echo "Detailed Pod Placements:"
+      echo "Control Pods:"
+      kubectl get pods -n experiment-control -o wide --no-headers 2>/dev/null | awk '{print "  " $1 " -> " $7}' || true
+      echo "Treatment Pods:"
+      kubectl get pods -n experiment-treatment -o wide --no-headers 2>/dev/null | awk '{print "  " $1 " -> " $7}' || true
+
+      # Sleep remaining cycle time (140s to make ~180s cycle)
+      sleep 140
+    done
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: live-soak-runner
+  namespace: predictive-scheduler
+  labels:
+    app: live-soak-runner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: live-soak-runner
+  template:
+    metadata:
+      labels:
+        app: live-soak-runner
+    spec:
+      serviceAccountName: soak-runner-sa
+      containers:
+        - name: runner
+          image: bitnami/kubectl:latest
+          command: ["/bin/bash", "/scripts/runner.sh"]
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
+          volumeMounts:
+            - name: script-vol
+              mountPath: /scripts
+      volumes:
+        - name: script-vol
+          configMap:
+            name: soak-runner-script
+            defaultMode: 0755

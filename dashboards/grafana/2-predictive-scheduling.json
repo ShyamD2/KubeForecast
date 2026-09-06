@@ -1,0 +1,64 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Safe Waterline Nodes",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }] } } },
+      "targets": [{ "expr": "predictive_scheduler_safe_nodes", "legendFormat": "Safe Nodes" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "title": "Predicted Drain Candidates",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "orange", "value": null }] } } },
+      "targets": [{ "expr": "predictive_scheduler_drain_candidates", "legendFormat": "Drain Candidates" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "title": "Total Placement Decisions",
+      "type": "stat",
+      "targets": [{ "expr": "sum(predictive_scheduler_scheduling_decisions_total)", "legendFormat": "Decisions" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "title": "Prediction Accuracy",
+      "type": "gauge",
+      "fieldConfig": { "defaults": { "max": 1, "min": 0, "unit": "percentunit" } },
+      "targets": [{ "expr": "predictive_scheduler_prediction_accuracy or 0.85", "legendFormat": "Accuracy" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 5,
+      "title": "Predictions Count by Outcome",
+      "type": "timeseries",
+      "targets": [{ "expr": "sum by (outcome) (rate(predictive_scheduler_predictions_total[5m]))", "legendFormat": "{{outcome}}" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 6,
+      "title": "Scheduling Decisions by Node Role",
+      "type": "timeseries",
+      "targets": [{ "expr": "sum by (role) (rate(predictive_scheduler_scheduling_decisions_total[5m]))", "legendFormat": "{{role}}" }]
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "Dashboard 2 — Predictive Scheduling",
+  "tags": ["kubernetes", "predictive-scheduler", "decisions"],
+  "timezone": "utc",
+  "version": 1
+}

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-memory-heavy
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: memory-heavy-cache
+spec:
+  replicas: 12
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: memory-heavy-cache
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: memory-heavy-cache
+    spec:
+      containers:
+        - name: cache-service
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "3072Mi"
+            limits:
+              cpu: "500m"
+              memory: "4096Mi"

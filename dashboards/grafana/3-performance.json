@@ -1,0 +1,62 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Webhook Latency P50",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "s" } },
+      "targets": [{ "expr": "histogram_quantile(0.50, sum(rate(predictive_scheduler_webhook_latency_seconds_bucket[5m])) by (le))", "legendFormat": "P50" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "title": "Webhook Latency P95",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "s" } },
+      "targets": [{ "expr": "histogram_quantile(0.95, sum(rate(predictive_scheduler_webhook_latency_seconds_bucket[5m])) by (le))", "legendFormat": "P95" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "title": "Webhook Latency P99",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "s" } },
+      "targets": [{ "expr": "histogram_quantile(0.99, sum(rate(predictive_scheduler_webhook_latency_seconds_bucket[5m])) by (le))", "legendFormat": "P99" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "title": "Webhook Admission Request Rate",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "reqps" } },
+      "targets": [{ "expr": "sum(rate(predictive_scheduler_webhook_requests_total[1m]))", "legendFormat": "RPS" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 6 },
+      "id": 5,
+      "title": "Webhook Evaluation Latency Quantiles",
+      "type": "timeseries",
+      "fieldConfig": { "defaults": { "unit": "s" } },
+      "targets": [
+        { "expr": "histogram_quantile(0.50, sum(rate(predictive_scheduler_webhook_latency_seconds_bucket[5m])) by (le))", "legendFormat": "P50" },
+        { "expr": "histogram_quantile(0.95, sum(rate(predictive_scheduler_webhook_latency_seconds_bucket[5m])) by (le))", "legendFormat": "P95" },
+        { "expr": "histogram_quantile(0.99, sum(rate(predictive_scheduler_webhook_latency_seconds_bucket[5m])) by (le))", "legendFormat": "P99" }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "Dashboard 3 — Performance",
+  "tags": ["kubernetes", "predictive-scheduler", "performance", "sla"],
+  "timezone": "utc",
+  "version": 1
+}

@@ -1,0 +1,81 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Total Node Count",
+      "type": "stat",
+      "targets": [
+        { "expr": "count(kube_node_info) or count(predictive_scheduler_safe_nodes + predictive_scheduler_drain_candidates)", "legendFormat": "Nodes" }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "title": "Total Active Pods",
+      "type": "stat",
+      "targets": [
+        { "expr": "count(kube_pod_info{phase=\"Running\"}) or sum(predictive_scheduler_scheduling_decisions_total)", "legendFormat": "Pods" }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "title": "Cluster CPU Utilization (%)",
+      "type": "gauge",
+      "fieldConfig": { "defaults": { "max": 100, "min": 0, "unit": "percent" } },
+      "targets": [
+        { "expr": "(sum(predictive_scheduler_cpu_used) / sum(predictive_scheduler_cpu_requested)) * 100", "legendFormat": "CPU Util" }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "title": "Cluster Memory Utilization (%)",
+      "type": "gauge",
+      "fieldConfig": { "defaults": { "max": 100, "min": 0, "unit": "percent" } },
+      "targets": [
+        { "expr": "(sum(predictive_scheduler_memory_used) / sum(predictive_scheduler_memory_requested)) * 100", "legendFormat": "Memory Util" }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 5,
+      "title": "CPU: Requested vs Actual Used (millicores)",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "predictive_scheduler_cpu_requested", "legendFormat": "Requested - {{group}}" },
+        { "expr": "predictive_scheduler_cpu_used", "legendFormat": "Used - {{group}}" }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 6,
+      "title": "Memory: Requested vs Actual Used (bytes)",
+      "type": "timeseries",
+      "fieldConfig": { "defaults": { "unit": "bytes" } },
+      "targets": [
+        { "expr": "predictive_scheduler_memory_requested", "legendFormat": "Requested - {{group}}" },
+        { "expr": "predictive_scheduler_memory_used", "legendFormat": "Used - {{group}}" }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "Dashboard 1 — Cluster Overview",
+  "tags": ["kubernetes", "predictive-scheduler", "cluster"],
+  "timezone": "utc",
+  "version": 1
+}

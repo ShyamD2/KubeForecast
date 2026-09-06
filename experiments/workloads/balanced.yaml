@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-balanced
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: balanced-app
+spec:
+  replicas: 16
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: balanced-app
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: balanced-app
+    spec:
+      containers:
+        - name: web
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: "400m"
+              memory: "1600Mi"
+            limits:
+              cpu: "800m"
+              memory: "2048Mi"

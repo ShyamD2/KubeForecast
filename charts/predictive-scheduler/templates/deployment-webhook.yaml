@@ -1,0 +1,65 @@
+{{- if .Values.webhook.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-webhook
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}-webhook
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.webhook.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Chart.Name }}-webhook
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Chart.Name }}-webhook
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      securityContext:
+        runAsNonRoot: {{ .Values.webhook.securityContext.runAsNonRoot }}
+        runAsUser: {{ .Values.webhook.securityContext.runAsUser }}
+      containers:
+        - name: webhook
+          image: "{{ .Values.global.imageRegistry }}/{{ .Values.webhook.image.repository }}:{{ .Values.webhook.image.tag }}"
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          command:
+            - "/webhook"
+            - "--port={{ .Values.webhook.port }}"
+            - "--metrics-port={{ .Values.webhook.metricsPort }}"
+            - "--tls-cert-file=/etc/webhook/certs/tls.crt"
+            - "--tls-key-file=/etc/webhook/certs/tls.key"
+          ports:
+            - name: https-webhook
+              containerPort: {{ .Values.webhook.port }}
+              protocol: TCP
+            - name: http-metrics
+              containerPort: {{ .Values.webhook.metricsPort }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http-metrics
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http-metrics
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          resources:
+            {{- toYaml .Values.webhook.resources | nindent 12 }}
+          volumeMounts:
+            - name: webhook-certs
+              mountPath: /etc/webhook/certs
+              readOnly: true
+      volumes:
+        - name: webhook-certs
+          secret:
+            secretName: {{ .Release.Name }}-webhook-tls
+{{- end }}

@@ -1,0 +1,33 @@
+# Multi-stage secure build for Predictive Admission Webhook
+FROM golang:1.24-alpine AS builder
+
+WORKDIR /workspace
+
+# Install ca-certificates and security build tools
+RUN apk add --no-cache ca-certificates git
+
+# Cache dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy source code
+COPY api/ api/
+COPY internal/ internal/
+COPY cmd/ cmd/
+
+# Build static binary without CGO, stripped symbols
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags="-w -s" -o /webhook ./cmd/webhook
+
+# Minimal distroless non-root runtime image
+FROM gcr.io/distroless/static:nonroot
+
+WORKDIR /
+
+COPY --from=builder /webhook /webhook
+
+# Run as non-root user (distroless nonroot UID is 65532)
+USER 65532:65532
+
+EXPOSE 8443 8080
+
+ENTRYPOINT ["/webhook"]

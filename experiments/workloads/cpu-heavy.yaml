@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-cpu-heavy
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: cpu-heavy-worker
+spec:
+  replicas: 16
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cpu-heavy-worker
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: cpu-heavy-worker
+    spec:
+      containers:
+        - name: compute-task
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "while true; do sha256sum /dev/urandom; sleep 1; done"]
+          resources:
+            requests:
+              cpu: "750m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1024Mi"

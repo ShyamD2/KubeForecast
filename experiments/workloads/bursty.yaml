@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-bursty
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: bursty-processor
+spec:
+  replicas: 15
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: bursty-processor
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: bursty-processor
+    spec:
+      containers:
+        - name: event-handler
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: "800m"
+              memory: "2048Mi"
+            limits:
+              cpu: "2000m"
+              memory: "4096Mi"

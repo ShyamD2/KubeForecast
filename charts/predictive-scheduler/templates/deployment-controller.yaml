@@ -1,0 +1,64 @@
+{{- if .Values.controller.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-controller
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}-controller
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.controller.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Chart.Name }}-controller
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Chart.Name }}-controller
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      securityContext:
+        runAsNonRoot: {{ .Values.controller.securityContext.runAsNonRoot }}
+        runAsUser: {{ .Values.controller.securityContext.runAsUser }}
+      containers:
+        - name: controller
+          image: "{{ .Values.global.imageRegistry }}/{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          command:
+            - "/controller"
+            - "--simulation-interval={{ .Values.controller.simulationInterval }}"
+            - "--metrics-port={{ .Values.controller.metricsPort }}"
+            - "--eviction-enabled={{ .Values.controller.eviction.enabled }}"
+            - "--snapshot-dir=/tmp/snapshots"
+            {{- if .Values.controller.s3.bucket }}
+            - "--s3-bucket={{ .Values.controller.s3.bucket }}"
+            - "--aws-region={{ .Values.controller.s3.region }}"
+            {{- end }}
+          ports:
+            - name: http-metrics
+              containerPort: {{ .Values.controller.metricsPort }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http-metrics
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http-metrics
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          resources:
+            {{- toYaml .Values.controller.resources | nindent 12 }}
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}
+{{- end }}

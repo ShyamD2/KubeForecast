@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predictive-dashboard
+  namespace: predictive-scheduler
+  labels:
+    app: predictive-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: predictive-dashboard
+  template:
+    metadata:
+      labels:
+        app: predictive-dashboard
+    spec:
+      containers:
+        - name: web
+          image: public.ecr.aws/nginx/nginx:alpine
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html-vol
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+            - name: api-vol
+              mountPath: /usr/share/nginx/html/api
+          resources:
+            requests:
+              cpu: "20m"
+              memory: "32Mi"
+            limits:
+              cpu: "50m"
+              memory: "64Mi"
+      volumes:
+        - name: html-vol
+          configMap:
+            name: dashboard-html
+        - name: api-vol
+          configMap:
+            name: dashboard-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: predictive-dashboard
+  namespace: predictive-scheduler
+  labels:
+    app: predictive-dashboard
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: predictive-dashboard

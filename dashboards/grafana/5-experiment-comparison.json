@@ -1,0 +1,63 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 8, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Control Group Waste Ratio (%)",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "percent" } },
+      "targets": [{ "expr": "predictive_scheduler_cluster_waste_ratio{group=\"control\", dimension=\"structural\"}", "legendFormat": "Control Waste" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 },
+      "id": 2,
+      "title": "Treatment Group Waste Ratio (%)",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "unit": "percent" } },
+      "targets": [{ "expr": "predictive_scheduler_cluster_waste_ratio{group=\"treatment\", dimension=\"structural\"}", "legendFormat": "Treatment Waste" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 8, "x": 16, "y": 0 },
+      "id": 3,
+      "title": "Measured Waste Reduction (%)",
+      "type": "stat",
+      "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "steps": [{ "color": "green", "value": null }] }, "unit": "percent" } },
+      "targets": [{ "expr": "((predictive_scheduler_cluster_waste_ratio{group=\"control\", dimension=\"structural\"} - predictive_scheduler_cluster_waste_ratio{group=\"treatment\", dimension=\"structural\"}) / predictive_scheduler_cluster_waste_ratio{group=\"control\", dimension=\"structural\"}) * 100", "legendFormat": "Waste Reduction" }]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 4,
+      "title": "Node Count Comparison",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "predictive_scheduler_safe_nodes + predictive_scheduler_drain_candidates", "legendFormat": "Control Active Nodes" },
+        { "expr": "predictive_scheduler_safe_nodes", "legendFormat": "Treatment Retained Nodes" }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 5,
+      "title": "Resource Waste Comparison Over Time",
+      "type": "timeseries",
+      "fieldConfig": { "defaults": { "unit": "percent" } },
+      "targets": [
+        { "expr": "predictive_scheduler_cluster_waste_ratio{group=\"control\"}", "legendFormat": "Control {{dimension}}" },
+        { "expr": "predictive_scheduler_cluster_waste_ratio{group=\"treatment\"}", "legendFormat": "Treatment {{dimension}}" }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "Dashboard 5 — Experiment Comparison (Control vs Treatment)",
+  "tags": ["kubernetes", "experiment", "ab-testing", "finops"],
+  "timezone": "utc",
+  "version": 1
+}

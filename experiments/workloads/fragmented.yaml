@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-fragmented
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: fragmented-microservice
+spec:
+  replicas: 11
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: fragmented-microservice
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: fragmented-microservice
+    spec:
+      containers:
+        - name: service
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: "400m"
+              memory: "1200Mi"
+            limits:
+              cpu: "600m"
+              memory: "1500Mi"

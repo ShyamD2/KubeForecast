@@ -1,0 +1,8 @@
+Scenario,TotalPods,ControlNodes,TreatmentNodes,ControlCostHour,TreatmentCostHour,HourlySavings,SavingsPct,ControlCPUWastePct,TreatmentCPUWastePct,ControlMemWastePct,TreatmentMemWastePct,ControlStructuralWastePct,TreatmentStructuralWastePct,WasteReductionPct
+cpu-heavy,32,8,7,0.7680,0.6720,0.0960,12.50,13.33,13.33,31.64,31.64,58.96,22.49,61.90
+memory-heavy,32,8,7,0.7680,0.6720,0.0960,12.50,25.00,25.00,15.36,15.36,60.76,20.18,66.80
+balanced,32,8,4,0.7680,0.3840,0.3840,50.00,20.00,20.00,25.00,25.00,69.35,22.50,67.60
+bursty,30,10,6,0.9600,0.5760,0.3840,40.00,75.00,75.00,60.94,60.94,85.18,67.97,20.20
+fragmented,22,12,4,1.1520,0.3840,0.7680,66.70,37.50,37.50,33.33,33.33,88.87,35.42,60.10
+replica-heavy,48,8,5,0.7680,0.4800,0.2880,37.50,20.00,20.00,25.00,25.00,74.01,22.50,69.60
+mixed,40,10,5,0.9600,0.4800,0.4800,50.00,30.00,30.00,33.33,33.33,70.29,31.67,54.90

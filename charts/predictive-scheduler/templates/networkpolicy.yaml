@@ -1,0 +1,42 @@
+{{- if .Values.networkPolicy.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Release.Name }}-network-policy
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    # Allow API Server to hit admission webhook
+    - from: []
+      ports:
+        - protocol: TCP
+          port: {{ .Values.webhook.port }}
+    # Allow Prometheus scraping
+    - from: []
+      ports:
+        - protocol: TCP
+          port: {{ .Values.webhook.metricsPort }}
+        - protocol: TCP
+          port: {{ .Values.scheduler.metricsPort }}
+  egress:
+    # Allow communication to Kubernetes API server and AWS S3
+    - to: []
+      ports:
+        - protocol: TCP
+          port: 443
+        - protocol: TCP
+          port: 6443
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+{{- end }}

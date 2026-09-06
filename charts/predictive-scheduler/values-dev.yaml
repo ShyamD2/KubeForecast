@@ -1,0 +1,59 @@
+# AWS Dev Environment Values for KubeForecast Predictive Scheduler
+
+global:
+  imageRegistry: "197550036081.dkr.ecr.us-east-1.amazonaws.com"
+  imagePullPolicy: Always
+
+serviceAccount:
+  create: true
+  name: "predictive-scheduler-sa"
+  annotations:
+    eks.amazonaws.com/role-arn: "arn:aws:iam::197550036081:role/dev-predictive-scheduler-irsa"
+
+webhook:
+  enabled: true
+  replicaCount: 2
+  image:
+    repository: "dev-predictive-webhook"
+    tag: "v1"
+  port: 8443
+  metricsPort: 8080
+  caBundle: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLekNDQWhPZ0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREEzTVJVd0V3WURWUVFLRXd4TGRXSmwKUm05eVpXTmhjM1F4SGpBY0JnTlZCQU1URlZCeVpXUnBZM1JwZG1WVFkyaGxaSFZzWlhKRFFUQWVGdzB5TmpBNQpNRFl3TmpNd016ZGFGdzB5TnpBNU1EWXdOek13TXpkYU1EY3hGVEFUQmdOVkJBb1RERXQxWW1WR2IzSmxZMkZ6CmRERWVNQndHQTFVRUF4TVZVSEpsWkdsamRHbDJaVk5qYUdWa2RXeGxja05CTUlJQklqQU5CZ2txaGtpRzl3MEIKQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBNm1KUENlbk9STmlnbm56b0dIc0FSMFB4THh0RWxLOWtVUCtWR1B2UwpNTGc2ejgzb2YrSmhqWTJmKy9VV1dRcDJpUGM1VVBFM1V6ZFV1MmZEUzRrZGFUenFSbkFIb09xYVg4c3hwU0Y1CmtjSlRxSTZCZjVzL3crTE1XYnNYQ3c2RmFXU0JORVhWUUZLRDRKV2hQNDRVanlZMnc2U3IyTXZkOUJxZW1tZnIKRUtpSkQ5bFV0QWRCWGFmQmZ1SHVhT2R2enNRQTJoUTBMbTRldFM2by9KLzd5eTBUdzdueEI0dmtVdkg2QS9FeQpsc3cwQ0drclBWZWNITHpkWkhMVk51TmZuVEhzUDE4bWRXaGZTcGErTDlEeFBWMzdJZmZIbGo2TWZqMW05WDZCCnZlUHlxcW02ZmFjaVp2aGhua3ZKRUpTcWhvV3U4Z3c1Yk9hTVVzd051U1o1UVFJREFRQUJvMEl3UURBT0JnTlYKSFE4QkFmOEVCQU1DQVFZd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVTJDVHdOZEEvSDNTeQpua25TMUg1NGZ0VnM2cVl3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQUJ2RDA3bTUzSDRGK0FRc3NtZ3Nmb0ZYCjdnOExaaldBbWp6Y3dUMXN4R2RMNUxmU3FqeEp5ZEVSa25ZbGI3bWV2UG5VTldwZ1RQdElrYytQSnlKL25ERzUKZVU4WnFTS1F5R24rYUJtcWRaMG5sZmpUZWN4bVpzSlBCajZlT3BudjRLUnI2VWpFTC9ET0ptZG1YWk0zWFlsRAp0Yld0dnZUUWp2M2VxSWhUU01lY01peTEyOU1JN1gzR0V2RmE2Wmd0bEs1V0MyWi84ZGFsY2UzTEhMY1kyZkJjCkM2REIzRVE4UUhSMVFqelFWVTBhdk9IZDZyNk05dm1RRWZnRnI5bEsyOEhFenJLVTYwLzhnKzdlb0hjc0gvNDYKd1ovZ3EwSUVTSC9vcXdjdnZKQTVucFJlNm8vcUg5SlR3elhEZmZ0TFRPQ1JIb21kQnFDQUtmRDBQdHoyOElrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+
+controller:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: "dev-predictive-controller"
+    tag: "v1"
+  metricsPort: 8080
+  simulationInterval: "5m"
+  s3:
+    bucket: "dev-predictive-snapshots-20260906061030386700000001"
+    region: "us-east-1"
+  eviction:
+    enabled: false
+    maxPodsPerHour: 2
+    maxConcurrentEvictions: 1
+    minAvailableCapacityPct: 0.20
+    cooldown: "15m"
+
+scheduler:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: "dev-predictive-scheduler"
+    tag: "v2"
+  metricsPort: 10259
+
+waterline:
+  cpuWeight: 0.30
+  memoryWeight: 0.30
+  consolidationWeight: 0.20
+  disruptionWeight: 0.15
+  historicalWeight: 0.05
+  targetUtilizationThreshold: 0.75
+
+serviceMonitor:
+  enabled: false
+

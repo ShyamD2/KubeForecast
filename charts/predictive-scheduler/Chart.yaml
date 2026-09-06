@@ -1,0 +1,14 @@
+apiVersion: v2
+name: predictive-scheduler
+description: Kubernetes Predictive Scheduling & Cost Optimization Engine Helm Chart
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - kubernetes
+  - scheduling
+  - finops
+  - cost-optimization
+  - bin-packing
+maintainers:
+  - name: Platform Engineering Team

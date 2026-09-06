@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload-replica-heavy
+  namespace: experiment-treatment
+  labels:
+    predictive-scheduler/group: treatment
+    app.kubernetes.io/name: replica-heavy-api
+spec:
+  replicas: 24
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: replica-heavy-api
+  template:
+    metadata:
+      labels:
+        predictive-scheduler/group: treatment
+        app.kubernetes.io/name: replica-heavy-api
+    spec:
+      containers:
+        - name: edge-api
+          image: public.ecr.aws/docker/library/busybox:latest
+          command: ["sh", "-c", "sleep 3600"]
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "800Mi"
+            limits:
+              cpu: "500m"
+              memory: "1024Mi"

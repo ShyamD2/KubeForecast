@@ -1,0 +1,52 @@
+# Production values for predictive-scheduler
+
+global:
+  imagePullPolicy: Always
+
+webhook:
+  replicaCount: 3
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+
+controller:
+  replicaCount: 2 # Active-passive leader election
+  simulationInterval: "15m"
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+  eviction:
+    enabled: true
+    maxPodsPerHour: 5
+    maxConcurrentEvictions: 2
+    minAvailableCapacityPct: 0.25
+    cooldown: "20m"
+  s3:
+    bucket: "production-eks-predictive-scheduler-snapshots"
+    region: "us-east-1"
+
+scheduler:
+  replicaCount: 2
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+
+serviceMonitor:
+  enabled: true
+  interval: "15s"
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 2

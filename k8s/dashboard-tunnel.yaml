@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predictive-tunnel
+  namespace: predictive-scheduler
+  labels:
+    app: predictive-tunnel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: predictive-tunnel
+  template:
+    metadata:
+      labels:
+        app: predictive-tunnel
+    spec:
+      containers:
+        - name: tunnel
+          image: cloudflare/cloudflared:latest
+          args:
+            - tunnel
+            - --no-autoupdate
+            - --url
+            - http://predictive-dashboard.predictive-scheduler.svc:80
+          resources:
+            requests:
+              cpu: "25m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
