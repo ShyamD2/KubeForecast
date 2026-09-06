@@ -80,7 +80,7 @@ The system includes a live sci-fi command cockpit (`dashboard/index.html`) featu
 
 | Demonstration Asset | File Path | Format / Size | Showcase Highlights |
 | :--- | :--- | :--- | :--- |
-| **Full Cockpit Walkthrough** | [`kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 (82.4 MB) | Real-time moving pipeline packets, audio alerts, Control vs. Treatment node drain simulation ($0/hr), live FinOps ROI slider. |
+| **Full Cockpit Walkthrough** | [`kubeforecast_live_cockpit_demo.mp4`](screenshots/kubeforecast_live_cockpit_demo.mp4) | MP4 (5.9 MB, GitHub Streamable) | Real-time moving pipeline packets, audio alerts, Control vs. Treatment node drain simulation ($0/hr), live FinOps ROI slider. |
 
 All screenshots below represent real, verified captures from live AWS EKS infrastructure, browser DevTools, terminal logs, and the JARVIS dashboard in [`screenshots/`](screenshots/).
 
