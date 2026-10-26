@@ -1,0 +1,4 @@
+# GitHub Linguist overrides for KubeForecast
+docs/** linguist-documentation
+video.html linguist-detectable=false
+*.html linguist-detectable=false
